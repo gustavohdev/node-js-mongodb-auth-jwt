@@ -72,6 +72,10 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
+// routes
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+
 app.listen(PORT, () => {
     console.log("server ready");
 });
