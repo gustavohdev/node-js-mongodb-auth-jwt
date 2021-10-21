@@ -7,10 +7,12 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
+    //const saltRounds = 10;
+    // const salt = bcrypt.genSaltSync(saltRounds);
     const user = new User({
         username: req.body.username,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 8),
+        password: bcrypt.hashSync(req.body.password, 10),
     });
 
     user.save((err, user) => {

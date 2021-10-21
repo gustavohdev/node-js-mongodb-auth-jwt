@@ -10,7 +10,9 @@ var corOptions = {
 
 app.use(cors(corOptions));
 
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
 
 const db = require("./app/models");
 const dbConfig = require("./app/config/db.config");
